@@ -16,3 +16,7 @@ Hook(window.console, (log) => {
     alert("Sorry")
     bus.emit("console-feed.message", log)
 })
+
+setInterval(() => {
+    bus.emit("tick", null)
+}, 2500)
