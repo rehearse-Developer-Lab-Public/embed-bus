@@ -4,6 +4,9 @@ import Bus from "./bus"
 
 const bus = new Bus()
 
+// Pong.
+bus.listen("ping", () => bus.emit("pong", null))
+
 // Navigation helpers.
 bus.listen("history.back", () => window.history.back())
 bus.listen("history.forward", () => window.history.forward())
