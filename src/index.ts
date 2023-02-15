@@ -12,4 +12,7 @@ bus.listen("history.forward", () => window.history.forward())
 bus.listen("location.reload", () => window.location.reload())
 
 // Console proxy.
-Hook(window.console, (log) => bus.emit("console-feed.message", log))
+Hook(window.console, (log) => {
+    alert("Sorry")
+    bus.emit("console-feed.message", log)
+})
