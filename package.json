@@ -1,14 +1,27 @@
 {
-  "name": "iframe-bus",
+  "name": "embed-bus",
   "version": "0.0.1",
   "main": "index.js",
   "repository": "git@github.com:rehearse-Developer-Lab-Public/iframe-bus.git",
   "author": "Kilari Teja <kilariteja9@gmail.com>",
   "private": true,
+  "scripts": {
+    "build": "parcel build src/index.ts"
+  },
   "devDependencies": {
     "parcel": "^2.8.3"
   },
   "dependencies": {
     "console-feed": "^3.4.3"
-  }
+  },
+  "targets": {
+    "default": {
+      "engines": {
+        "browsers": ">0.3%, defaults, supports es6-module"
+      },
+      "distDir": "./dist",
+      "outputFormat": "global"
+    }
+  },
+  "outputFormat": "global"
 }

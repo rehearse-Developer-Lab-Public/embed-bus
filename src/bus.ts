@@ -1,5 +1,5 @@
 /*
-  Communication bus using the postMessage infrastructure.
+  Bus that uses postMessage infrastructure.
 */
 export default class Bus {
   private listeners: Record<string, ListenerCallback> = {}
