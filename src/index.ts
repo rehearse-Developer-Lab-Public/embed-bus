@@ -10,7 +10,10 @@ bus.listen("ping", () => bus.emit("pong", null))
 // Navigation helpers.
 bus.listen("history.back", () => window.history.back())
 bus.listen("history.forward", () => window.history.forward())
-bus.listen("location.reload", () => window.location.reload())
+bus.listen("location.reload", () => {
+    console.log("relodaing....")
+    window.location.reload()
+})
 
 // Console proxy.
-Hook(window.console, (log) => bus.emit("console-feed.message", Decode(log)))
+// Hook(window.console, (log) => bus.emit("console-feed.message", Decode(log)))
