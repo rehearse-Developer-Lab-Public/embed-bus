@@ -13,7 +13,9 @@ export default class Bus {
   }
 
   emit(event: string, message: any) {
-    window.postMessage({ event, message }, "*")
+    if (window.top) {
+      window.top.postMessage({ event, message }, "*")
+    }
   }
 
   listen(event: string, callback: ListenerCallback) {
